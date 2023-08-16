@@ -10,8 +10,6 @@ module.exports.sendCookies = async (user, res, message, statusCode = 200) => {
     .cookie("token", token, {
       httpOnly: true,
       maxAge: 5 * 60 * 1000,
-      SameSite: process.env.NODE_ENV === "Development" ? "Lax" : "None",
-      secure: process.env.NODE_ENV === "Development" ? false : true
     })
     .json({
       success: true,
