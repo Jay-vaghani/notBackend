@@ -21,6 +21,10 @@ app.use(cors({
 app.use("/users", userRouter);
 app.use("/task", taskRouter);
 
+app.get("/", (req, res) => {
+    res.send("Working")
+})
+
 // Error Handler 
 app.use(ErrorMiddleWare)
 
