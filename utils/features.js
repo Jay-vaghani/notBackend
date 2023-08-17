@@ -8,7 +8,7 @@ module.exports.sendCookies = async (user, res, message, statusCode = 200) => {
   res
     .status(statusCode)
     .cookie("token", token, {
-      httpOnly: true,
+      httpOnly: false,
       maxAge: 5 * 60 * 1000,
     })
     .json({
